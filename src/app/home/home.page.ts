@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { App } from '@capacitor/app';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router:Router) {
+  }
+
+  exitApp()
+  {
+    App.exitApp();
+  }
+
+  aboutPage()
+  {
+    this.router.navigateByUrl("/about");
+  }
+  contactusPage()
+  {
+    this.router.navigateByUrl("/contactus");
+  }
 
 }
